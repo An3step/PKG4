@@ -1,0 +1,67 @@
+Данная документация предназначена для людей, имеющих опыт в программировании,
+желающих ознакомиться с кодом данного проекта.
+
+Сборка проекта:
+-Необходимо наличие консоли Qt 5.x.x (MinGW 64-bit).
+-Шаги сборки:
+Запустить консоль Qt MinGW.
+Использовать команду cd 'путь к папке с исходным ходом'
+В папке с исходным кодом использовать команду windeployqt 'Название файла'.exe
+Запустить исполняемый файл
+
+1. Описание проекта
+Это приложение позволяет задать отрезок в координатной сетке Oxy и 
+растеризовать с использованием алгоритмов:
+Алгоритм отрезка:
+-Алгоритм Брезенхема
+-Алгоритм Кастла-Питвея
+-Алгоритм ЦДА
+-Пошаговый алгоритм
+Алгоритм окружности:
+-Алгоритм Брезенхема.
+Алгоритм отрезка со сглаживанием:
+-Алгоритм Ву
+
+2. Архитектура приложения
+Класс основного окна: Rasterisation
+
+3. Классы и методы
+Rasterisation:
+Rasterisation(QWidget *parent = nullptr)
+~Rasterisation()
+void MakeOsi()
+void UpdateLabel()
+void resizeEvent(QResizeEvent*)
+void DrawWuLine()
+Слоты:
+void on_horizontalSlider_valueChanged(int value)
+void on_spinBox_valueChanged(int arg1)
+void on_spinBox_2_valueChanged(int arg1)
+void on_spinBox_3_valueChanged(int arg1)
+void on_spinBox_4_valueChanged(int arg1)
+void DrawLine()
+void SetRange()
+void ChangeStart()
+void ChangeCdStart()
+void negatex(QPoint&)
+void negatey(QPoint&)
+void reflect(QPoint&)
+void ChangePoints()
+void ChangeWuPoints()
+void on_StepAlgorithm_clicked()
+void on_Bresenhem_clicked()
+void on_CDA_clicked()
+void on_radioButton_4_clicked()
+void on_spinBox_5_valueChanged(int arg1)
+QString reflect(QString&)
+void InitPoints()
+void on_Kastl_Pitway_clicked()
+void on_pushButton_clicked()
+QString to_number(const int&) const
+QString to_float(const float&) const
+void on_AlWu_clicked()
+
+4. Взаимодействие с интерфейсом
+Выберите начальную и конечную точки для выбора отрезка. 
+Выберите алгоритм для растеризации линии или окружности.
+Выберите с помощью ползунка число делений координатной сетки.
